@@ -9,15 +9,9 @@ import { ServicesComponent } from './services/services.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TeamComponent } from './team/team.component';
 import { HomeComponent } from './home/home.component';
-import { RouterModule, Routes } from '@angular/router';
-
-const appRoutes: Routes = [
-  { path:'', component: HomeComponent},
-  { path:'about', component: AboutComponent},
-  { path:'contact', component: ContactUsComponent},
-  { path:'services', component: ServicesComponent},
-  { path:'team', component: TeamComponent}
-];
+import { ServicesDialogComponent } from './services-dialog/services-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -28,11 +22,13 @@ const appRoutes: Routes = [
     ServicesComponent,
     ContactUsComponent,
     TeamComponent,
-    HomeComponent
+    HomeComponent,
+    ServicesDialogComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
